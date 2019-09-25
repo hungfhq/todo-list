@@ -6,9 +6,9 @@ class App extends Component {
   constructor() {
     super();
     this.todoItems = [
-      'Wash clothes',
-      'Empty trash bin',
-      'Clean the bike'
+      { title: 'Wash clothes', isComplete: true },
+      { title: 'Empty trash bin', isComplete: false },
+      { title: 'Clean the bike', isComplete: false }
     ];
   }
 
@@ -18,7 +18,8 @@ class App extends Component {
         <header className="App-header">
           {
             this.todoItems
-              .map((item, index) => <TodoItem key={index} title={item} />)
+              .map((item, index) =>
+                <TodoItem key={index} item={item} />)
           }
         </header>
       </div>
