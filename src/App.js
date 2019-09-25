@@ -7,7 +7,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <TodoItem />
+        <TodoItem title="Wash clothes" />
+        <TodoItem title="Empty trash bin" />
       </header>
     </div>
   );
