@@ -15,7 +15,6 @@ class TodoItem extends Component {
     return (
       <div className='TodoItem'>
         <img onClick={onClick}
-          onMouseOver={this.props.checkIsAllComplete}
           src={img}
           alt=""
           width="50px" />

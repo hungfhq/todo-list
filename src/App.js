@@ -73,7 +73,8 @@ class App extends Component {
             title: item.title,
             isComplete: !this.state.allIsTicked
           }
-        })
+        }),
+      allIsTicked: !this.state.allIsTicked
     });
   }
 
@@ -146,7 +147,7 @@ class App extends Component {
     return (
       <div className="App" onLoad={this.checkIsAllComplete}>
         <header className="App-header">
-          <div className="Container">
+          <div className="Container" onMouseOver={this.checkIsAllComplete}>
             <div className="Add-todo">
               <img
                 className={classNames('All-is-not-ticked', {
@@ -176,7 +177,6 @@ class App extends Component {
                       item={item}
                       removeItem={() => this.removeItem(item)}
                       onClick={this.onItemClicked(item)}
-                      checkIsAllComplete={this.checkIsAllComplete}
                     />
                 )
             }
