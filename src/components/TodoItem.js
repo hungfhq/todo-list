@@ -1,17 +1,33 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 import './TodoItem.css';
+import before from '../img/before.svg';
+import after from '../img/after.svg';
 
 class TodoItem extends Component {
+
   render() {
-    const { item } = this.props;
-    let className = 'TodoItem';
+    const { item, onClick } = this.props;
+    let img = before;
     if (item.isComplete) {
-      className += ' TodoItem-complete';
+      img = after;
     }
     return (
-      <div className={className}>
-        <input type='checkbox' checked={item.isComplete} />
-        <span>{this.props.item.title}</span>
+      <div className='TodoItem'>
+        <img onClick={onClick}
+          onMouseOver={this.props.checkIsAllComplete}
+          src={img}
+          alt=""
+          width="50px" />
+        <span
+          className={classNames('Title', {
+            'TodoItem-complete': item.isComplete === true
+          })}>
+          {this.props.item.title}
+        </span>
+        <span className='DeleteButton'
+          onClick={this.props.removeItem}
+        >x</span>
       </div>
     )
   }

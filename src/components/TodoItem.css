@@ -1,12 +1,37 @@
 .TodoItem {
+  position: relative;
+  display: flex;
+  align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 300;
   font-size: 24px;
   color: #f2f2f2;
-  margin: 0 0 10px 0;
+  padding: 10px 40px 10px 10px;
+  border-bottom: 1px dashed #fff;
+  background-color: #888;
+}
+
+.TodoItem:last-child {
+  border-bottom: none;
+}
+
+.DeleteButton {
+  display: none;
+}
+
+
+.TodoItem:hover .DeleteButton {
+  display: block;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
 }
 
 .TodoItem-complete {
   text-decoration: line-through;
-  opacity: .3;
+  opacity: .5;
+}
+
+.Title {
+  margin: 0 0 0 10px;
 }
